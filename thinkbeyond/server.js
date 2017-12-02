@@ -1,13 +1,27 @@
-const express = require('express');
-const app = express();
+// Imports the Google Cloud client library
+const language = require('@google-cloud/language');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+// Instantiates a client
+const client = new language.LanguageServiceClient();
 
-const server = app.listen(8080, () => {
-  const host = server.address().address;
-  const port = server.address().port;
+// The text to analyze
+const text = 'Hello, world!';
 
-  console.log(`Example app listening at http://${host}:${port}`);
-});
+const document = {
+  content: text,
+  type: 'PLAIN_TEXT',
+};
+
+// Detects the sentiment of the text
+client
+  .analyzeSentiment({document: document})
+  .then(results => {
+    const sentiment = results[0].documentSentiment;
+
+    console.log(`Text: ${text}`);
+    console.log(`Sentiment score: ${sentiment.score}`);
+    console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
+  })
+  .catch(err => {
+    console.error('ERROR:', err);
+  });
