@@ -27,7 +27,7 @@
   },
   "permissions": [
     "contentSettings",
-    "fileBrowserHandler",
+    
     "tts",
     "ttsEngine",
     "notifications"
