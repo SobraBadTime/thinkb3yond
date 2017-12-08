@@ -11,9 +11,9 @@ We are using Google Cloud Platform to deploy the server of our Chrome Extension.
 ## Built With
 * Google Natural Language API
   * We are using the Natural Language API to analyze the sentiment of media with text, from text in articles to text from pictures.
-* Google Vision API
-  * We are using the Vision API to gather information and analyze images that users might encounter while surfing the web or using social media.
 * In the future...
+  * Google Vision API
+   * We are using the Vision API to gather information and analyze images that users might encounter while surfing the web or using social media.
   * Video Analysis and Parsing: We would like to work with some method of analyzing video. The Google Cloud Video Intelligence API could have been a good start to this, but it only provides labeling, while what we want is to be able to analyze text, the transcription of speech in the video, and possibly the political leaning of the images used in the video. 
   * Google Speech API: This would be used to take audio and transcribe it to speech so that we can analyze and parse speeches with the Natural Language API.
   
